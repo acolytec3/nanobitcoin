@@ -18,7 +18,7 @@ class Blockchain(object):
 
 	def register_node(self, address):
 		parsed_url = urlparse(address)
-		self.nodes.add(parsed_url.netloc)
+		self.nodes.add(parsed_url.path)
 
 	def new_block(self, proof, previous_hash=None):
 		block = {
@@ -58,11 +58,11 @@ class Blockchain(object):
 			print('{last_block}'.format(last_block=last_block))
 			print('{block}'.format(block=block))
 			print("\n-------------\n")
-			
+
 			if block['previous_hash'] != self.hash(last_block):
 				return False
 
-			if not self.valid_proof(last_block['proof'], block['proof']):
+			if not Blockchain.valid_proof(last_block['proof'], block['proof']):
 				return False
 
 			last_block = block
@@ -77,7 +77,7 @@ class Blockchain(object):
 		max_length = len(self.chain)
 
 		for node in neighbors:
-			response = requests.get('http://{node}/chain/'.format(node=node))
+			response = requests.get('http://{node}/chain'.format(node=node))
 
 			if response.status_code == 200:
 				length = response.json()['length']
@@ -128,7 +128,7 @@ def mine():
 
 	previous_hash = blockchain.hash(last_block)
 	block = blockchain.new_block(proof, previous_hash)
-	
+
 	response = {
 		'message': 'New block forged',
 		'index': block['index'],
@@ -148,7 +148,7 @@ def new_transaction():
 	try:
 		if not all(k in values for k in required):
 			return 'Missing values', 400
-	except: 
+	except:
 		return 'Malformed request', 400
 
 	index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
@@ -169,6 +169,7 @@ def register_nodes():
 	values = request.get_json()
 
 	nodes = values.get('nodes')
+
 	if nodes is None:
 		return "Error: PLease supply a valid list of nodes", 400
 
