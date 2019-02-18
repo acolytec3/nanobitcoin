@@ -36,13 +36,14 @@ class Blockchain(object):
 
 	def valid_transaction(self, sender, recipient, amount):
 		print('Checking transactions')
+		if sender == 0:
+			return False
 		index = 0
 		balance = 0
 		valid_sender = False
 		while index < len(self.chain):
 			block = self.chain[index]
 			for transaction in block['transactions']:
-				print('Sender:= '+ transaction['sender'] + ' Recipient:= ' + transaction['recipient'])
 				if transaction['sender'] == sender:
 					if balance < amount:
 						return 2
