@@ -34,27 +34,6 @@ class Blockchain(object):
 		self.chain.append(block)
 		return block
 
-	def valid_transaction(self, sender, recipient, amount):
-		print('Checking transactions')
-		index = 0
-		balance = 0
-		valid_sender = False
-		while index < len(self.chain):
-			block = self.chain[index]
-			for transaction in block['transactions']:
-				print('Sender:= '+ transaction['sender'] + ' Recipient:= ' + transaction['recipient'])
-				if transaction['sender'] == sender:
-					if balance < amount:
-						return 2
-					balance -= amount
-					valid_sender = True
-				elif transaction['recipient'] == sender:
-					balance += amount
-					valid_sender = True
-			index +=1
-		return valid_sender
-			
-			
 	def new_transaction(self, sender, recipient, amount):
 		self.current_transactions.append({
 			'sender': sender,
@@ -83,7 +62,7 @@ class Blockchain(object):
 			if block['previous_hash'] != self.hash(last_block):
 				return False
 
-			if not Blockchain.valid_proof(last_block['proof'], block['proof']):
+			if not self.valid_proof(last_block['proof'], block['proof']):
 				return False
 
 			last_block = block
@@ -98,7 +77,7 @@ class Blockchain(object):
 		max_length = len(self.chain)
 
 		for node in neighbors:
-			response = requests.get('http://{node}/chain'.format(node=node))
+			response = requests.get('http://{node}/chain/'.format(node=node))
 
 			if response.status_code == 200:
 				length = response.json()['length']
@@ -119,7 +98,6 @@ class Blockchain(object):
 		blockstring = json.dumps(block, sort_keys=True).encode()
 		return hashlib.sha256(blockstring).hexdigest()
 
-	@staticmethod
 	def valid_proof(last_proof, proof):
 		guess = '{last_proof}{proof}'.format(last_proof=last_proof, proof=proof).encode()
 		guess_hash = hashlib.sha256(guess).hexdigest()
@@ -172,12 +150,7 @@ def new_transaction():
 			return 'Missing values', 400
 	except:
 		return 'Malformed request', 400
-	valid_transaction = blockchain.valid_transaction(values['sender'], values['recipient'], values['amount'])
-	if valid_transaction == 2:
-		return 'Insufficient funds', 400
-	elif valid_transaction == False:
-		return 'Unknown sender', 400
-		
+
 	index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
 
 	response = {'message': 'Transaction will be added to block {index}'.format(index=index)}
@@ -227,4 +200,4 @@ def consensus():
 	return jsonify(response), 200
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5000)
+	app.run(host='0.0.0.0', port=5001)
