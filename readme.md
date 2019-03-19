@@ -15,11 +15,11 @@ Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-buil
 * Very basic transaction validation that uses concept of accounts to ensure the sender of a transaction already has the necessary amount of nanobitcoin to make the transaction.
 
 ## Usage - hit these endpoints to access various node features
-GET Requests
+### GET Requests
 * /chain - Node will respond with the entire chain
 * /mine  - Node will mine a new block 
 * /nodes/resolve - Consensus protocol to determine which chain is valid
-POST Requests - look at code for required fields
+### POST Requests - look at code for required fields
 * /transactions/new - Adds a new transaction to the next block
 * /nodes/register - Register an additional nanobitcoin node and increase the security of the network!
 
