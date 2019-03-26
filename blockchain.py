@@ -221,7 +221,7 @@ def consensus():
 		}
 	else:
 		response = {
-			'message': 'Our chain is authoritateive',
+			'message': 'Our chain is authoritative',
 			'chain': blockchain.chain
 		}
 
