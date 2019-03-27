@@ -1,6 +1,9 @@
 Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46) and written to run on [Debian on Termux](https://github.com/sp4rkie/debian-on-termux)
 
 
+<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695"><img src="https://s3.amazonaws.com/od-flat-svg/0x178b1cb25cc2eecb4d3ad2ac558c1695.png" alt="gittron" width="50"/></a></td><td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695">Power up my Gittron with a Support Bot!</a></td></tr></table>
+
+
 ## First time setup/running process
 1. Clone this repo
 2. Install pipenv if you don't already use it.  It's great.
@@ -24,5 +27,3 @@ Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-buil
 * /transactions/new - Adds a new transaction to the next block
 * /nodes/register - Register an additional nanobitcoin node and increase the security of the network!
 
-
-<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695"><img src="https://s3.amazonaws.com/od-flat-svg/0x178b1cb25cc2eecb4d3ad2ac558c1695.png" alt="gittron" width="50"/></a></td><td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695">Power up my Gittron with a Support Bot!</a></td></tr></table>
