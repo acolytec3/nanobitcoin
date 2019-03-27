@@ -15,7 +15,7 @@ Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-buil
 
 ## Features
 * Allows basic mining
-* Very basic (and only partially working) transaction validation that uses concept of accounts to ensure the sender of a transaction already has the necessary amount of nanobitcoin to make the transaction.
+* Very basic transaction validation that uses concept of accounts to ensure the sender of a transaction already has the necessary amount of nanobitcoin to make the transaction.
 * Check out the [Blockchain Explorer](https://www.github.com/acolytec3/blockchain-explorer) for basic web front-end for the node
 
 ## Usage - hit these endpoints to access various node features
