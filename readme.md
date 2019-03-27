@@ -25,4 +25,4 @@ Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-buil
 * /nodes/register - Register an additional nanobitcoin node and increase the security of the network!
 
 
-
+<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695"><img src="https://s3.amazonaws.com/od-flat-svg/0x178b1cb25cc2eecb4d3ad2ac558c1695.png" alt="gittron" width="50"/></a></td><td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695">Power up my Gittron with a Support Bot!</a></td></tr></table>
