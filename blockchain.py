@@ -53,6 +53,15 @@ class Blockchain(object):
 					balance += amount
 					valid_sender = True
 			index +=1
+		for transaction in self.current_transactions:
+			if transaction['sender'] == sender:
+				if balance < amount:
+					return 2
+				balance -= amount
+				valid_sender = True
+			elif transaction['recipient'] == sender:
+				balance += amount
+				valid_sender = True
 		return valid_sender
 			
 			
@@ -166,8 +175,6 @@ def mine():
 def new_transaction():
 	values = request.get_json()
 	required = ['sender', 'recipient', 'amount']
-#	if ('sender' not in values):
-#		return 'Missing values', 400
 	try:
 		if not all(k in values for k in required):
 			return 'Missing values', 400
