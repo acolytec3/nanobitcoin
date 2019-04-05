@@ -1,7 +1,7 @@
 Inspired by [Daniel van Flymen](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46) and written to run on [Debian on Termux](https://github.com/sp4rkie/debian-on-termux)
 
 
-<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695"><img src="https://s3.amazonaws.com/od-flat-svg/0x178b1cb25cc2eecb4d3ad2ac558c1695.png" alt="gittron" width="70"/></a></td><td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695">Power up my Gittron with a Support Bot!</a></td></tr></table>
+<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695"><img src="https://s3.amazonaws.com/od-flat-svg/0x178b1cb25cc2eecb4d3ad2ac558c1695.png" alt="gittron" width="70"/></a></td><td><a href="https://gittron.me/bots/0x178b1cb25cc2eecb4d3ad2ac558c1695">Power up my Gittron with a Support Bot!</a></td><td><img src="https://img.shields.io/badge/Support%20Bots-5-brightgreen.svg"></td></tr></table>
 
 
 ## First time setup/running process
